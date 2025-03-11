@@ -82,14 +82,28 @@ export function CustomTemplateItem(props: CustomTemplateItemProps) {
         }
     };
 
+    // navigate to template when pressing Enter
+    const handleOnKeyDown = (event: React.KeyboardEvent) => {
+        if (!(event.code === 'Enter')) {
+            return;
+        }
+        navigateToTemplate();
+    };
+
     const navigateToTemplate = () => {
         if (props.item.id) {
             navigate.push(`/templates/${encodeURIComponent(props.item.id)}`);
         }
     };
+
     return (
         <>
-            <StyledCustomTemplateItem onClick={navigateToTemplate} className={menuOpen ? 'active' : ''}>
+            <StyledCustomTemplateItem
+                onClick={navigateToTemplate}
+                onKeyDown={handleOnKeyDown}
+                className={menuOpen ? 'active' : ''}
+                tabIndex={0}
+            >
                 <Box sx={{ mr: 2 }}>
                     <IconCircleWrapper>
                         <TemplateIcon fontSize="small" />

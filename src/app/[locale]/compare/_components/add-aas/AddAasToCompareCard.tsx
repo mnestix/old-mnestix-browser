@@ -20,6 +20,10 @@ export function AddAasToCompareCard(props: AddAasToCompareCardProps) {
             onClick={props.onClick}
             sx={{ cursor: 'pointer' }}
             data-testid="add-aas-to-compare-button"
+            // a custom component acting like a button
+            role="button"
+            // make it keyboard accessible
+            tabIndex={0}
         >
             <Card>
                 <CardContent>

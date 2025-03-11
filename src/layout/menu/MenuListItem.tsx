@@ -8,6 +8,7 @@ export interface MenuListItemProps {
     label?: React.ReactElement | string;
     target?: string;
     onClick?: React.MouseEventHandler<HTMLElement>;
+    onKeyDown?: React.KeyboardEventHandler<HTMLElement>;
 }
 
 export function MenuListItem(props: MenuListItemProps) {
@@ -24,10 +25,14 @@ export function MenuListItem(props: MenuListItemProps) {
             href={props.to}
             target={props.target}
             onClick={props.onClick}
+            // not sure if any of this is actually needed; needs testing
+            onKeyDown={props.onKeyDown}
         >
             {content}
         </ListItemButton>
     ) : (
-        <ListItemButton onClick={props.onClick}>{content}</ListItemButton>
+        <ListItemButton onClick={props.onClick} onKeyDown={props.onKeyDown}>
+            {content}
+        </ListItemButton>
     );
 }
