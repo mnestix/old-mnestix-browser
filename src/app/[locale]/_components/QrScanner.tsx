@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import ScannerLogo from 'assets/ScannerLogo.svg';
 import { Box, CircularProgress, IconButton, useTheme } from '@mui/material';
 import { QrStream } from 'app/[locale]/_components/QrStream';
@@ -41,15 +41,22 @@ export function QrScanner(props: { onScan: (scanResult: string) => Promise<void>
         }
     }, []);
 
+    const handleKeyDown = (state: State) => (event: React.KeyboardEvent) => {
+        if (!(event.key === 'Enter')) {
+            return;
+        }
+        setState(state);
+    };
+
     const expandFromCenter = keyframes`
-        0% {
-            width: 0;
-            left: 50%;
-        }
-        100% {
-            width: 100%;
-            left: 0;
-        }
+      0% {
+        width: 0;
+        left: 50%;
+      }
+      100% {
+        width: 100%;
+        left: 0;
+      }
     `;
 
     interface VideoContainerProps {
@@ -109,11 +116,15 @@ export function QrScanner(props: { onScan: (scanResult: string) => Promise<void>
             {state === State.Stopped && (
                 <Box
                     onClick={() => setState(State.LoadScanner)}
+                    onKeyDown={handleKeyDown(State.LoadScanner)}
                     padding="50px"
                     position="absolute"
                     height={size}
                     width={size}
                     data-testid="scanner-start"
+                    aria-label="open QR code scanner"
+                    tabIndex={0}
+                    role="button"
                 >
                     <ScannerLogo style={{ color: theme.palette.primary.main }} alt="Scanner Logo" />
                 </Box>
@@ -123,11 +134,13 @@ export function QrScanner(props: { onScan: (scanResult: string) => Promise<void>
                     data-testid="scanner-close-button"
                     aria-label="close scanner"
                     onClick={() => setState(State.Stopped)}
+                    onKeyDown={handleKeyDown(State.Stopped)}
                     style={{
                         position: 'absolute',
                         zIndex: 995,
                         right: 0,
                     }} // Align to the right top corner and render in front of everything
+                    tabIndex={0}
                 >
                     <CircleIcon fontSize="medium" style={{ color: 'white', position: 'absolute', zIndex: 993 }} />
                     <CancelIcon fontSize="large" color="primary" style={{ zIndex: 994 }} />

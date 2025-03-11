@@ -28,8 +28,9 @@ export const DashboardInput = () => {
         }
     };
 
+    // add main landmark
     return (
-        <>
+        <main>
             <Typography color="text.secondary" textAlign="center">
                 <FormattedMessage {...messages.mnestix.scanAasId} />
             </Typography>
@@ -38,6 +39,6 @@ export const DashboardInput = () => {
                 <FormattedMessage {...messages.mnestix.orEnterManual} />:
             </Typography>
             <ManualAasInput onSubmit={browseAasUrl} />
-        </>
+        </main>
     );
 };

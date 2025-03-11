@@ -28,10 +28,11 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
         '.MuiListItemButton-root': {
             color: theme.palette.primary.contrastText,
             '&:hover': {
-                backgroundColor: alpha(theme.palette.primary.dark, 0.8),
+                backgroundColor: alpha(theme.palette.primary.dark, 0.6),
             },
+            // do not remove focus indicators
             '&:focus': {
-                backgroundColor: 'transparent',
+                backgroundColor: alpha(theme.palette.primary.dark, 0.8),
             },
             '&.active': {
                 backgroundColor: theme.palette.primary.light,
@@ -105,6 +106,7 @@ export default function MainMenu() {
             label: <FormattedMessage {...messages.mnestix.logout} />,
             icon: <Logout />,
             onClick: () => auth.logout(),
+            onKeyDown: () => auth.logout(),
         },
     ];
 
@@ -113,6 +115,7 @@ export default function MainMenu() {
             label: <FormattedMessage {...messages.mnestix.login} />,
             icon: <Login />,
             onClick: () => auth.login(),
+            onKeyDown: () => auth.login(),
         },
         {
             label: <FormattedMessage {...messages.mnestix.home} />,
@@ -150,6 +153,7 @@ export default function MainMenu() {
                 sx={{ m: 1, zIndex: 1 }}
                 onClick={handleMenuInteraction(true)}
                 data-testid="header-burgermenu"
+                aria-label="main menu"
             >
                 <MenuIcon />
             </IconButton>
@@ -166,7 +170,7 @@ export default function MainMenu() {
                         </Box>
                     </StyledLogoWrapper>
                 )}
-                <Box onClick={handleMenuInteraction(false)} onKeyDown={handleMenuInteraction(false)}>
+                <Box onClick={handleMenuInteraction(false)}>
                     <List>
                         {!useAuthentication || auth.isLoggedIn ? (
                             <>

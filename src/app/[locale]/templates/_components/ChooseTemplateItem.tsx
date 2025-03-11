@@ -22,7 +22,8 @@ const StyledBox = styled(Box)(({ theme }) => ({
 export function ChooseTemplateItem(props: ChooseTemplateItemProps) {
     return (
         <Box>
-            <StyledBox onClick={props.onClick}>
+            {/* make the box keyboard accessible */}
+            <StyledBox onClick={props.onClick} tabIndex={0}>
                 <IconCircleWrapper sx={{ mr: 2 }}>
                     <Add color="primary" />
                 </IconCircleWrapper>

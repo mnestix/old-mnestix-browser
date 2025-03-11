@@ -76,6 +76,7 @@ export function ManualAasInput(props: { onSubmit: (input: string) => Promise<voi
                                 onClick={() => {
                                     setInputValue('');
                                 }}
+                                aria-label="Reset input"
                             >
                                 <CloseIcon />
                             </IconButton>
@@ -90,6 +91,7 @@ export function ManualAasInput(props: { onSubmit: (input: string) => Promise<voi
                 loading={isLoading}
                 onClick={handleSubmit}
                 data-testid="aasId-submit-button"
+                aria-label="Start search"
             />
         </Box>
     );

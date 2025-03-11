@@ -11,7 +11,7 @@ export type LocalizedIndexLayoutProps = {
 };
 
 export const metadata: Metadata = {
-    title: 'Mnestix',
+    title: 'Dashboard | Mnestix',
     description: 'AAS made easy',
 };
 
