@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 132 132" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <title>Scanner Button</title>
-    <g id="NEU" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M 0 0 v 32 h 12 v -20 h 20 v -12 z M 132 0 h -32 v 12 h 20 v 20 h 12 z M 132 132 v -32 h -12 v 20 h -20 v 12 z M 0 132 h 32 v -12 h -20 v -20 h -12 z " id="Vector" fill="currentColor" />
-        <path d="M 50 30 v 20 h -20 v -20 z M 60 20 h -40 v 40 h 40 z M 50 82 v 20 h -20 v -20 z M 60 72 h -40 v 40 h 40 z M 102 30 v 20 h -20 v -20 z M 112 20 h -40 v 40 h 40 z" id="Vector" fill="currentColor" />
-        <path d="M 72 72 h 10 v 10 h -10 z M 82 82 h 10 v 10 h -10 z M 92 72 h 10 v 10 h -10 z M 72 92 h 10 v 10 h -10 z M 82 102 h 10 v 10 h -10 z M 92 92 h 10 v 10 h -10 z M 102 82 h 10 v 10 h -10 z M 102 102 h 10 v 10 h -10 z" id="Vector" fill="currentColor" />
-    </g>
-</svg>
