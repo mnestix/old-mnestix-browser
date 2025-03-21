@@ -2,14 +2,9 @@
 > # **We moved to a new Eclipse Repository...**
 > # **Please visit: [Eclipse Mnestix Browser](https://github.com/eclipse-mnestix/mnestix-browser)**
 
-<p align="right">
-  <picture>
-    <source srcset="src/assets/XitasoLogo.svg"  media="(prefers-color-scheme: dark)">
-    <img src="src/assets/XitasoLogoBlack.svg" width=20%>
-  </picture>
-</p>
+
 <p align="center">
- <img src="public/android-chrome-192x192.png" alt="Mnestix Logo">
+ <img src="https://github.com/user-attachments/assets/cc326b61-63be-4de8-a4ba-a1a86663b389" alt="Mnestix Logo">
 </p>
 <h1 style="text-align: center">Mnestix</h1>
 
